@@ -1,23 +1,43 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import { renderButton, checkSignedIn } from './utils';
+import { Report } from './report';
+import { Header } from './components/header';
 
-function App() {
+export const App = () => {
+  const [isSignedIn, setIsSignedIn] = useState(false);
+
+  const updateSignin = (signedIn) => {
+    setIsSignedIn(signedIn);
+    if(!signedIn) {
+      renderButton();
+    }
+  };
+
+  const init = () => {
+    checkSignedIn()
+    .then((signedIn) => {
+      updateSignin(signedIn);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  };
+
+  useEffect(() => {
+    window.gapi.load("auth2", init);
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {!isSignedIn ? (
+        <div id="signin-button"></div>
+      ) : (
+        <>
+          <Header />
+          <Report />
+        </>
+      )}
     </div>
   );
 }
