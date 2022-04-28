@@ -1,6 +1,10 @@
+import dotenv from "dotenv";
+dotenv.config({ path: '../.env' })
+console.log("CLIENT: ", process.env.CLIENT_ID);
+
 const initAuth = () => {
   return window.gapi.auth2.init({
-    client_id: "770689162401-vfr850jj08bl1blub0v6kspfgsq5rt1i.apps.googleusercontent.com", //Paste client id here
+    client_id: process.env.CLIENT_ID,
     scope: "https://www.googleapis.com/auth/analytics.readonly"
   })
 }
