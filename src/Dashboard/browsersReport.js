@@ -5,7 +5,7 @@ import CustomDatePicker from "./datepicker";
 import { queryReport } from "./queryReport";
 import { ChartTitle, Subtitle, PieChartWrapper, colors } from "./styles";
 
-const BrowsersReport = (props) => {
+export const BrowsersReport = (props) => {
   const INITIAL_STATE = {
     labels: [],
     values: [],
@@ -97,5 +97,3 @@ const BrowsersReport = (props) => {
     </div>
   );
 };
-
-export default BrowsersReport;

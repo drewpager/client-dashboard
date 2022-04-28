@@ -3,6 +3,7 @@ import './App.css';
 import { renderButton, checkSignedIn } from './utils';
 import { Report } from './report';
 import { Header } from './components/header';
+import { DashBoard } from './Dashboard/dashboard';
 
 export const App = () => {
   const [isSignedIn, setIsSignedIn] = useState(false);
@@ -36,6 +37,7 @@ export const App = () => {
         <>
           <Header />
           <Report />
+          <DashBoard />
         </>
       )}
     </div>

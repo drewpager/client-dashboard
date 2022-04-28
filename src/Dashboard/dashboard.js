@@ -3,18 +3,17 @@ import DayVisitsReport from "./dayVisitsReport";
 import CountriesReport from "./countriesReport";
 import PageviewsReport from "./pageviewReport";
 import SourceReport from "./sourceReport";
-import BrowsersReport from "./browsersReport";
+import { BrowsersReport } from "./browsersReport";
 import DevicesReport from "./devicesReport";
 import Header from "../Components/header";
 import { LastRow } from "./styles";
 import InputField from "../Components/input";
 
-const DashBoard = () => {
+export const DashBoard = () => {
   const [viewID, setViewID] = useState(null);
 
   return (
     <>
-      <Header />
       {viewID ? (
         <>
           <DayVisitsReport
@@ -41,5 +40,3 @@ const DashBoard = () => {
     </>
   );
 };
-
-export default DashBoard;
