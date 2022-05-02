@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { signOut } from "../utils";
+import InputField from "./input";
 
 const Container = styled.div`
   height: 10vh;
-  background: #1c2e42;
+  background: #ff041d;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,23 +17,29 @@ const Container = styled.div`
 
   h1 {
     padding-left: 20px;
-    color: #d1d8e0;
+    color: white;
   }
 
   .signout {
     padding-right: 20px;
-    color: #e0d5d1;
+    color: white;
     cursor: pointer;
   }
 `;
 
-export const Header = () => {
+const Header = () => {
+  const [viewID, setViewID] = useState("221208153");
   return (
     <Container>
-      <h1>Google Analytics Dashboard</h1>
+      <h1>Siege Media Client Dashboard</h1>
+      <div>
+        <InputField onChange={(viewId) => setViewID(viewId)} />
+      </div>
       <div className="signout" onClick={signOut}>
         SIGN OUT
       </div>
     </Container>
   );
 };
+
+export default Header;

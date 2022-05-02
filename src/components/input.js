@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { FaRegQuestionCircle } from "react-icons/fa";
 
 const InputField = ({ submitViewId }) => {
-  const [viewID, setViewID] = useState("");
+  const [viewID, setViewID] = useState();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,28 +19,19 @@ const InputField = ({ submitViewId }) => {
           placeholder="Enter viewID"
         />
         <button type="submit" onClick={handleSubmit}>
-          SUBMIT
+          Submit
         </button>
-        <a
-          href="https://stackoverflow.com/questions/36898103/what-is-a-viewid-in-google-analytics"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaRegQuestionCircle />
-        </a>
       </form>
     </InputRow>
   );
 };
 
-export default InputField;
-
 const InputRow = styled.div`
-  padding-top: 10vh;
+  // padding-top: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 60vh;
 
   input {
     line-height: 7vh;
@@ -57,8 +47,8 @@ const InputRow = styled.div`
     border-radius: 20px;
     border: 1px solid #4b2f57;
     font-size: 1.5rem;
-    background-color: #1c2e42;
-    color: #d1d8e0;
+    background-color: black;
+    color: white;
     cursor: pointer;
   }
 
@@ -66,3 +56,5 @@ const InputRow = styled.div`
     cursor: pointer;
   }
 `;
+
+export default InputField;

@@ -32,27 +32,28 @@ export const StyledTable = styled.table`
 `;
 
 export const colors = [
-  "#fcba03",
-  "#fa8c5c",
-  "#9fc934",
-  "#60d17e",
-  "#45afed",
-  "#7c5cdb",
-  "#ce5cdb",
-  "#db5c97",
+  "#ff041d",
+  "#a8a8a8",
+  "red",
+  "blue",
+  "#00ffff",
+  "#000973",
+  "#eddede",
+  "#164db5",
 ];
 
 export const ChartTitle = styled.h2`
-  color: #4b2f57;
+  color: black;
   font-size: 2rem;
 `;
 
 export const Subtitle = styled.h3`
-  color: #35213d;
+  color: black;
   padding-bottom: 20px;
 `;
 
 export const ReportWrapper = styled.div`
+  margin-top: 50px;
   padding: 40px 0;
   border-bottom: 1px solid #f0eee9;
 `;
@@ -77,11 +78,12 @@ export const DatepickerWrapper = styled.div`
     width: fit-content;
     border-color: #a2c1f2;
     border-radius: 10px;
-    background-color: #d3dded;
+    background-color: blue;
     text-align: center;
     line-height: 20px;
     font-size: 1rem;
     margin-bottom: 20px;
+    color: white;
   }
 `;
 

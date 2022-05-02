@@ -5,12 +5,11 @@ import PageviewsReport from "./pageviewReport";
 import SourceReport from "./sourceReport";
 import { BrowsersReport } from "./browsersReport";
 import DevicesReport from "./devicesReport";
-import Header from "../Components/header";
 import { LastRow } from "./styles";
-import InputField from "../Components/input";
+import InputField from "../components/input";
 
 export const DashBoard = () => {
-  const [viewID, setViewID] = useState(null);
+  const [viewID, setViewID] = useState("221208153");
 
   return (
     <>
